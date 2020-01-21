@@ -22,6 +22,10 @@
 ### 4. Rxjs 快速入门 与 Promise、async/await 介绍使用
 
 - 4.1 [Callback、Promise、async/await](chapter1/4.1-callback-promise-async-await.md)
+- 4.2 [Rxjs 的概念性介绍](chapter1/4.2-Rxjs基础入门.md)
+- 4.3 [Rxjs 五大核心概念](chapter1/4.3-Rxjs核心概念.md)
+- 4.4 [Rxjs 操作符](chapter1/4.4-Rxjs操作符.md)
+- 4.5 [Rxjs 与 Promise](chapter1/4.5-Rxjs-or-Promise.md)
 
 ## 第二章 Nest 入门
 
