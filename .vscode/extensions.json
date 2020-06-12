@@ -8,7 +8,7 @@
     "mikael.angular-beastcode",
     "streetsidesoftware.code-spell-checker",
     "eamodio.gitlens",
-    "hex-ci.stylelint-plus",
+    "stylelint.vscode-stylelint",
     "mkaufman.htmlhint",
     "knisterpeter.vscode-commitizen",
     "wmaurer.change-case",

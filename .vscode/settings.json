@@ -1,15 +1,19 @@
 {
-  "eslint.autoFixOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
     "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true,
+    // import sort order
     "source.organizeImports": true
   },
   "emmet.showSuggestionsAsSnippets": true,
   "editor.snippetSuggestions": "top",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "editor.autoIndent": true,
+  "editor.autoIndent": "full",
   "editor.codeLens": false,
   "editor.fontLigatures": true,
   "editor.formatOnType": false,
@@ -46,8 +50,9 @@
     "**/coverage": true,
     "**/docs": true
   },
+  // 以下配置大多是设置默认格式化程序
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,5 +63,17 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "shd101wyy.markdown-preview-enhanced"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // markdown
+  "markdownlint.config": {
+    "MD033": {
+      "allowed_elements": ["iframe", "details", "summary", "div", "hr", "br", "a", "img"]
+    }
+  }
 }
