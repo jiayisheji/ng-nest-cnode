@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "hello-world",
+  "title": "Hello World Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "生成一个md文件名字",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "md文件使用什么名称?"
+    },
+    "content": {
+      "type": "string",
+      "description": "填充内容",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "请输入内容?"
+    }
+  },
+  "required": [
+    "name",
+    "content"
+  ]
+}
