@@ -1,0 +1,30 @@
+<% if (script === 'ts') {%>
+import {Component, Vue} from "vue-property-decorator";
+
+@Component({
+  components: {}
+})
+export default class <%= classify(name) %>Component extends Vue {
+
+}
+<% } else { %>
+export default {
+  name: '<%= dasherize(name) %>',
+  components: {},
+  props: [],
+  data () {
+    return {
+
+    }
+  },
+  computed: {
+
+  },
+  mounted () {
+
+  },
+  methods: {
+
+  }
+}
+<% } %>

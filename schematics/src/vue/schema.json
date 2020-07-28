@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "vue",
+  "title": "Vue Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "生成组件名字路径",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "你希望为组件使用什么名字?"
+    },
+    "template": {
+      "type": "string",
+      "description": "生成模板语言",
+      "default": "html",
+      "enum": [
+        "html",
+        "pug"
+      ]
+    },
+    "script": {
+      "type": "string",
+      "description": "生成脚本语言",
+      "default": "js",
+      "enum": [
+        "js",
+        "ts"
+      ]
+    },
+    "style": {
+      "type": "string",
+      "description": "生成样式语言",
+      "default": "css",
+      "enum": [
+        "css",
+        "scss",
+        "sass",
+        "less",
+        "stylus",
+        "postcss"
+      ]
+    },
+    "pure": {
+      "type": "boolean",
+      "description": "纯组件",
+      "default": false
+    },
+    "inlineStyle": {
+      "type": "boolean",
+      "description": "内联样式",
+      "default": true
+    },
+    "inlineTemplate": {
+      "type": "boolean",
+      "description": "内联模板",
+      "default": true
+    },
+    "inlineScript": {
+      "type": "boolean",
+      "description": "内联脚本",
+      "default": true
+    },
+    "scoped": {
+      "type": "boolean",
+      "description": "启用样式作用域",
+      "default": false
+    },
+    "module": {
+      "type": "boolean",
+      "description": "启用 CSS Modules",
+      "default": false
+    },
+    "moduleName": {
+      "type": "array",
+      "description": "CSS Modules name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "spec": {
+      "type": "boolean",
+      "description": "测试用例文件",
+      "default": false
+    },
+    "docs": {
+      "type": "boolean",
+      "description": "启用自定义块<docs>",
+      "default": false
+    },
+    "custom": {
+      "type": "array",
+      "description": "自定义块",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "在文件名中添加开发人员定义的类型，格式为\"name.type.ts\"",
+      "default": "Component",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

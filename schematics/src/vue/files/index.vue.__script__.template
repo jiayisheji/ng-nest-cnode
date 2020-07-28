@@ -1,0 +1,8 @@
+<% if(!!docs) { %>
+<docs>
+## This is an Example component.
+</docs>
+<% } %>
+<template lang="<%= template %>" src="./<%= dasherize(name) %>.<%= camelize(type) %>.<%= template %>"></template>
+<script <% if(script!='js') { %>lang="<%= script %>"<% } %> src="./<%= dasherize(name) %>.<%= camelize(type) %>.<%= script %>"></script>
+<style lang="<%= style %>" src="./<%= dasherize(name) %>.<%= camelize(type) %>.<%= style %>"></style>
