@@ -1,0 +1,29 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "hello-world": {
+      "aliases": [
+        "helloWorld"
+      ],
+      "description": "A blank schematic.",
+      "factory": "./hello-world/index#helloWorld",
+      "schema": "./hello-world/schema.json"
+    },
+    "vue-component": {
+      "aliases": [
+        "vueComponent"
+      ],
+      "description": "A vue Component schematic.",
+      "factory": "./vue/index#vueComponent",
+      "schema": "./vue/schema.json"
+    },
+    "vue-component2": {
+      "aliases": [
+        "vueComponent2"
+      ],
+      "description": "A vue Component2 schematic.",
+      "factory": "./vue/index#vueComponent",
+      "schema": "./vue/schema2.json"
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "vue",
+  "title": "Vue Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "生成组件名字路径",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "你希望为组件使用什么名字?"
+    },
+    "template": {
+      "type": "string",
+      "description": "生成模板语言",
+      "default": "html",
+      "enum": [
+        "html",
+        "pug"
+      ],
+      "x-prompt": {
+        "message": "你希望使用哪种模板语言?",
+        "type": "list",
+        "items": [
+          {
+            "value": "html",
+            "label": "HTML"
+          },
+          {
+            "value": "pug",
+            "label": "Pug"
+          }
+        ]
+      }
+    },
+    "script": {
+      "type": "string",
+      "description": "生成脚本语言",
+      "default": "js",
+      "enum": [
+        "js",
+        "ts"
+      ],
+      "x-prompt": {
+        "message": "你希望使用哪种脚本语言?",
+        "type": "list",
+        "items": [
+          {
+            "value": "js",
+            "label": "JavaScript"
+          },
+          {
+            "value": "ts",
+            "label": "TypeScript"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "description": "生成样式语言",
+      "default": "css",
+      "enum": [
+        "css",
+        "scss",
+        "sass",
+        "less",
+        "stylus",
+        "postcss"
+      ],
+      "x-prompt": {
+        "message": "你希望使用哪种样式表格式?",
+        "type": "list",
+        "items": [
+          {
+            "value": "css",
+            "label": "CSS"
+          },
+          {
+            "value": "scss",
+            "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]"
+          },
+          {
+            "value": "sass",
+            "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]"
+          },
+          {
+            "value": "less",
+            "label": "Less   [ http://lesscss.org                                             ]"
+          },
+          {
+            "value": "stylus",
+            "label": "Stylus [ http://stylus-lang.com                                         ]"
+          },
+          {
+            "value": "postcss",
+            "label": "Postcss [ https://postcss.org                                         ]"
+          }
+        ]
+      }
+    },
+    "pure": {
+      "type": "boolean",
+      "description": "纯组件",
+      "default": false,
+      "x-prompt": "你要添加纯组件吗？"
+    },
+    "inlineStyle": {
+      "type": "boolean",
+      "description": "内联样式",
+      "default": true,
+      "x-prompt": "你要添加组件内联样式吗？"
+    },
+    "inlineTemplate": {
+      "type": "boolean",
+      "description": "内联模板",
+      "default": true,
+      "x-prompt": "你要添加组件内联模板吗？"
+    },
+    "inlineScript": {
+      "type": "boolean",
+      "description": "内联脚本",
+      "default": true,
+      "x-prompt": "你要添加组件内联脚本吗？"
+    },
+    "scoped": {
+      "type": "boolean",
+      "description": "启用样式作用域",
+      "default": false,
+      "x-prompt": "你要启用组件样式作用域吗？"
+    },
+    "module": {
+      "type": "boolean",
+      "description": "启用 CSS Modules",
+      "default": false,
+      "x-prompt": "你要启用组件样式 CSS Modules 吗？"
+    },
+    "moduleName": {
+      "type": "string",
+      "description": "CSS Modules name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "请输入组件样式 CSS Modules name，使用空格分隔，会自动生成多个<style module=\"name\">"
+    },
+    "spec": {
+      "type": "boolean",
+      "description": "测试用例文件",
+      "default": false,
+      "x-prompt": "你要启用组件测试用例吗？"
+    },
+    "docs": {
+      "type": "boolean",
+      "description": "启用自定义块<docs>",
+      "default": false,
+      "x-prompt": "你要启用组件自定义块<docs>吗？"
+    },
+    "custom": {
+      "type": "string",
+      "description": "自定义块",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "你要启用组件自定义块吗？使用空格分隔，会自动生成多个<custom>"
+    },
+    "type": {
+      "type": "string",
+      "description": "在文件名中添加开发人员定义的类型，格式为\"name.type.ts\"",
+      "default": "Component",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "你要启用组件文件名类型吗？"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

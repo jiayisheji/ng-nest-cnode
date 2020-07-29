@@ -1,29 +1,44 @@
 {
-  "eslint.autoFixOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.tslint": true,
-    "source.organizeImports": true
-  },
-  "emmet.showSuggestionsAsSnippets": true,
-  "editor.snippetSuggestions": "top",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": true,
-  "editor.autoIndent": true,
-  "editor.codeLens": false,
+  "window.zoomLevel": 1,
+  "explorer.sortOrder": "type",
+  // Editor
+  "editor.autoIndent": "full",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorStyle": "line",
   "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
   "editor.formatOnType": false,
+  "editor.formatOnSave": false,
+  "editor.letterSpacing": 0.5,
+  "editor.lineHeight": 24,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  "editor.snippetSuggestions": "top",
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
+    "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true,
+    // import sort order
+    "source.organizeImports": true
+  },
+  // Emmet
+  "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
-  "explorer.sortOrder": "type",
+  // Workbench
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 8,
+  "workbench.editor.highlightModifiedTabs": true,
+  // File settings
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/.idea": true,
-    "**/.svn": true,
     "**/*.js": {
       "when": "$(basename).ts"
     },
@@ -31,14 +46,13 @@
       "when": "$(basename)"
     }
   },
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/**": true,
-    "**/dist/**": true
-  },
   "files.defaultLanguage": "typescript",
   "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "renovate.json5": "jsonc",
+    "tslint.json": "jsonc",
+    "nx.json": "jsonc"
+  },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -46,8 +60,9 @@
     "**/coverage": true,
     "**/docs": true
   },
+  // Formatter
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,5 +73,20 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "shd101wyy.markdown-preview-enhanced"
+  },
+  // markdown
+  "markdownlint.config": {
+    "MD033": {
+      "allowed_elements": ["iframe", "details", "summary", "div", "hr", "br", "a", "img"]
+    }
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "cSpell.words": [
+    "dasherize"
+  ],
 }

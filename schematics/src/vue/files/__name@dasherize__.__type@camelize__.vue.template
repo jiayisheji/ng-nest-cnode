@@ -1,0 +1,46 @@
+<% if(!!docs) { %><docs>
+## This is an Example component.
+</docs><% } %>
+<template lang="<%= template %>"><% if (template === 'pug') {%>
+div(class="<%= dasherize(name) %>")
+  h1 <%= dasherize(name) %> Component
+<% } else { %>
+<div class="<%= dasherize(name) %>">
+  <h1><%= dasherize(name) %> Component</h1>
+</div>
+<% } %>
+</template>
+<script lang="<%= script %>"><% if (script === 'ts') {%>
+import {Component, Vue} from "vue-property-decorator";
+
+@Component({
+  components: {}
+})
+export default class <%= classify(name) %>Component extends Vue {
+
+}
+<% } else { %>
+export default {
+  name: '<%= dasherize(name) %>',
+  components: {},
+  props: [],
+  data () {
+    return {
+
+    }
+  },
+  computed: {
+
+  },
+  mounted () {
+
+  },
+  methods: {
+
+  }
+}
+<% } %></script>
+<style lang="<%= style %>" <% if(!!scoped) { %>scoped<% } %>>
+.<%= dasherize(name) %> {
+}
+</style>

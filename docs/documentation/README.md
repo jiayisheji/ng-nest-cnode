@@ -27,11 +27,16 @@
 - 4.4 [Rxjs 操作符](chapter1/4.4-Rxjs操作符.md)
 - 4.5 [Rxjs 与 Promise](chapter1/4.5-Rxjs-or-Promise.md)
 
+### 5. Schematics 入门 与 实战
+
+- 5.1 [Schematics 入门](chapter1/5.1-Schematics入门.md)
+- 5.2 [Schematics 实战1](chapter1/5.2-Schematics实战1.md)
+
 ## 第二章 Nest 入门
 
-1. 什么是 Nest
-2. Nest 体系结构
-3. OpenAPI (Swagger)
+1. [什么是 Nest](2.1-什么是Nest.md)
+2. [Nest 体系结构](2.2-Nest体系结构.md)
+3. [OpenAPI (Swagger)](2.3-OpenAPI-Swagger.md)
 
 ## 第三章 Angular 入门
 
@@ -50,7 +55,7 @@
 
 未定
 
-## 第六章 Mongoose（typegoose）
+## 第六章 Mongoose（Typegoose）
 
 未定
 
