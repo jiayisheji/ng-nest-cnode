@@ -63,9 +63,9 @@ module.exports = [
     remark: '',
   },
   {
-    scope: 'deps',
+    scope: 'deps-dev',
     name: '依赖管理',
     readme: 'package.json',
-    remark: '',
+    remark: 'build(deps-dev): bump package-name from 7.0.1 to 8.0.1'
   },
 ];
