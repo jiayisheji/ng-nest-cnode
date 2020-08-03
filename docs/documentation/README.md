@@ -34,15 +34,15 @@
 
 ## 第二章 Nest 入门
 
-1. [什么是 Nest](2.1-什么是Nest.md)
-2. [Nest 体系结构](2.2-Nest体系结构.md)
-3. [OpenAPI (Swagger)](2.3-OpenAPI-Swagger.md)
+1. [什么是 Nest](chapter2/2.1-什么是Nest.md)
+2. [Nest 体系结构](chapter2/2.2-Nest体系结构.md)
+3. [OpenAPI (Swagger)](chapter2/2.3-OpenAPI-Swagger.md)
 
 ## 第三章 Angular 入门
 
-1. 什么是 Angular
-2. Angular 体系结构
-3. 组件库选择
+1. [什么是 Angular](chapter3/3.1-什么是Angular.md)
+2. [Angular 体系结构](chapter3/3.2-Angular体系结构.md)
+3. [组件库选择](chapter3/3.3-组件库选择.md)
 
 ## 第四章 依赖注入
 
