@@ -46,10 +46,10 @@
 
 ## 第四章 依赖注入
 
-1. 依赖注入介绍
-2. Nest 依赖注入
-3. Angular 依赖注入
-4. Nest 和 Angular 不一样
+1. [依赖注入介绍](chapter4/4.1-依赖注入介绍.md)
+2. [Nest 依赖注入](chapter4/4.2-Nest依赖注入.md)
+3. [Angular 依赖注入](chapter4/4.3-Angular依赖注入.md)
+4. [Nest 和 Angular 不一样](chapter4/4.4-Nest和Angular不一样.md)
 
 ## 第五章 TypeORM
 
