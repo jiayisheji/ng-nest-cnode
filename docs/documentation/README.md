@@ -57,7 +57,10 @@
 
 ## 第六章 Mongoose（Typegoose）
 
-未定
+1. [什么是 Mongoose](chapter6/6.1-什么是Mongoose.md)
+2. [什么是 Schema](chapter6/6.2-什么是Schema.md)
+3. [Typegoose](chapter6/6.3-Typegoose.md)
+4. [Repository](chapter6/6.4-Repository.md)
 
 ## 第七章 authentication（身份验证）
 

@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-nest-cnode/repository": ["libs/repository/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -16,6 +16,9 @@
     },
     "server": {
       "tags": ["api-module"]
+    },
+    "repository": {
+      "tags": ["repository"]
     }
   },
   "tasksRunnerOptions": {

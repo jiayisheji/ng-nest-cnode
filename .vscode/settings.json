@@ -87,6 +87,10 @@
   },
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "cSpell.words": [
-    "dasherize"
+    "Typegoose",
+    "Virtuals",
+    "cnode",
+    "dasherize",
+    "typeof"
   ],
 }
