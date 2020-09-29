@@ -1,0 +1,8 @@
+@import 'theming';
+
+.mat-form-field {
+  display: block;
+  .mat-icon {
+    color: map-get($mat-light-theme-foreground, icon);
+  }
+}

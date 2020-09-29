@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'theming';
+
+@include mat-core();
+
+// Define the default theme (same as the example above).
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, a200, a100, a400);
+$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($candy-app-theme);
+
+
+.mat-button-block {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+}

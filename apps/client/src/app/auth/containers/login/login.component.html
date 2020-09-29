@@ -1,0 +1,12 @@
+<p>login works!</p>
+<form [formGroup]="validateForm" autocomplete="off" (ngSubmit)="onSubmitForm()">
+  <mat-form-field>
+    <mat-icon matPrefix>person</mat-icon>
+    <input matInput required formControlName="username" placeholder="输入用户名" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-icon matPrefix>enhanced_encryption</mat-icon>
+    <input type="password" required formControlName="password" matInput placeholder="输入密码" />
+  </mat-form-field>
+  <button class="mat-button-block" color="primary" type="submit" mat-raised-button [disabled]="!validateForm.valid">登录</button>
+</form>
