@@ -29,7 +29,7 @@
     // For Stylelint
     "source.fixAll.stylelint": true,
     // import sort
-    "source.organizeImports": true
+    // "source.organizeImports": true
   },
   // File settings
   "files.associations": {
@@ -49,13 +49,25 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript"
+  ],
   // markdown
   "markdownlint.config": {
     "MD033": {
-      "allowed_elements": ["iframe", "details", "summary", "div", "hr", "br", "a", "img"]
+      "allowed_elements": [
+        "iframe",
+        "details",
+        "summary",
+        "div",
+        "hr",
+        "br",
+        "a",
+        "img"
+      ]
     }
   },
   // html
@@ -87,5 +99,14 @@
   },
   // typescript
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "cSpell.words": ["Typegoose", "Virtuals", "cnode", "dasherize", "typeof"]
+  "cSpell.words": [
+    "Nestjs",
+    "Typegoose",
+    "Virtuals",
+    "cnode",
+    "dasherize",
+    "mongodb",
+    "nrwl",
+    "typeof"
+  ]
 }

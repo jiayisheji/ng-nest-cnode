@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-nest-cnode/repository": ["libs/repository/src/index.ts"]
+      "@ng-nest-cnode/repository": ["libs/repository/src/index.ts"],
+      "@ng-nest-cnode/client/*": ["apps/client/src/*"],
+      "@ng-nest-cnode/server/*": ["apps/server/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -4,8 +4,15 @@
     "client": {
       "projectType": "application",
       "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipSelector": true
+        },
+        "@schematics/angular:directive": {
+          "skipSelector": true
+        },
+        "@schematics/angular:service": {
+          "skipSelector": true
         }
       },
       "root": "apps/client",
@@ -21,9 +28,36 @@
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
-            "styles": ["apps/client/src/styles.scss"],
-            "scripts": []
+            "assets": [
+              "apps/client/src/favicon.ico",
+              "apps/client/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/material-design-icons/sprites/svg-sprite",
+                "output": "/assets/icons",
+                "ignore": [
+                  "**/*.html",
+                  "**/*.css"
+                ]
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/material-design-icons/iconfont",
+                "output": "/assets/iconfont",
+                "ignore": [
+                  "**/*.md"
+                ]
+              }
+            ],
+            "styles": [
+              "apps/client/src/styles.scss"
+            ],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules/@angular/material"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -78,8 +112,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/client/tsconfig.app.json", "apps/client/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/client/**/*"]
+            "tsConfig": [
+              "apps/client/tsconfig.app.json",
+              "apps/client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/client/**/*"
+            ]
           }
         },
         "test": {
@@ -112,8 +152,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/client-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/client-e2e/**/*"]
+            "tsConfig": [
+              "apps/client-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/client-e2e/**/*"
+            ]
           }
         }
       }
@@ -131,7 +176,9 @@
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": ["apps/server/src/assets"]
+            "assets": [
+              "apps/server/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -156,8 +203,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/server/tsconfig.app.json", "apps/server/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/server/**/*"]
+            "tsConfig": [
+              "apps/server/tsconfig.app.json",
+              "apps/server/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/server/**/*"
+            ]
           }
         },
         "test": {
@@ -178,8 +231,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/repository/tsconfig.lib.json", "libs/repository/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/repository/**/*"]
+            "tsConfig": [
+              "libs/repository/tsconfig.lib.json",
+              "libs/repository/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/repository/**/*"
+            ]
           }
         },
         "test": {
