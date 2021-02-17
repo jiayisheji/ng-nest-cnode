@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { LoginDto, RegisterDto } from '../models/auth.dto';
+import { Tokens } from '../models/tokens';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +11,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class AuthApi {
   constructor(private http: HttpClient) {}
 
-  login(body) {
+  login(body: LoginDto) {
     return this._crypto(body.password).pipe(
       switchMap((password: string) => {
         body.password = password;
@@ -18,7 +20,7 @@ export class AuthApi {
     );
   }
 
-  register(body) {
+  register(body: RegisterDto) {
     return this._crypto(body.password).pipe(
       switchMap((password: string) => {
         body.password = password;
@@ -32,7 +34,7 @@ export class AuthApi {
   }
 
   refreshToken() {
-    return this.http.get(`/logout`);
+    return this.http.get<Tokens>(`/logout`);
   }
 
   /** 加密密码 */
@@ -45,7 +47,7 @@ export class AuthApi {
     return from(crypto.subtle.digest('SHA-256', data)).pipe(
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
       map((buffer) => new Uint8Array(buffer)),
-      map((uint8) => String.fromCharCode.apply(null, uint8)),
+      map((uint8) => String.fromCharCode.apply(null, (uint8 as unknown) as number[])),
       // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa
       map((str) => btoa(str)),
     );

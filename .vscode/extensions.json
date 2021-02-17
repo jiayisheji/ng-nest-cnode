@@ -20,6 +20,7 @@
     "quicktype.quicktype",
     "jasonnutter.search-node-modules",
     "humao.rest-client",
-    "firsttris.vscode-jest-runner"
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
   ]
 }

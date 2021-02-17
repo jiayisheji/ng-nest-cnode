@@ -11,15 +11,15 @@ export class AuthService {
   private readonly ACCESS_TOKEN = 'ACCESS_TOKEN';
   private readonly REFRESH_TOKEN = 'REFRESH_TOKEN';
   private readonly LOGGED_USER = 'LOGGED_USER';
-  private readonly loggedUser$: BehaviorSubject<User> = new BehaviorSubject(null);
+  private readonly loggedUser$ = new BehaviorSubject<User>(null!);
 
   constructor() {
     // 初始化获取用户信息
-    let user: User = null;
+    let user: User | null = null;
     try {
-      user = JSON.parse(localStorage.getItem(this.LOGGED_USER)) as User;
+      user = JSON.parse(localStorage.getItem(this.LOGGED_USER) || '') as User;
     } catch (_ignoreError) {}
-    this.loggedUser$.next(user);
+    this.loggedUser$.next(user!);
   }
 
   /**
@@ -27,7 +27,7 @@ export class AuthService {
    * @param user
    * @param token
    */
-  doLoginUser(user: User, token: Tokens) {
+  doLoginUser(user: User | null, token: Tokens | null) {
     if (user) {
       this.storeUser(user);
     }
@@ -114,7 +114,7 @@ export class AuthService {
    * 删除用户信息
    */
   private removeUser() {
-    this.loggedUser$.next(null);
+    this.loggedUser$.next(null!);
     localStorage.removeItem(this.LOGGED_USER);
   }
 

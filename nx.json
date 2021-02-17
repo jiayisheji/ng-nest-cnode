@@ -9,23 +9,37 @@
   },
   "projects": {
     "client-e2e": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": [
+        "client"
+      ]
     },
     "client": {
-      "tags": ["app-module"]
+      "tags": [
+        "app-module"
+      ]
     },
     "server": {
-      "tags": ["api-module"]
+      "tags": [
+        "api-module"
+      ]
     },
     "repository": {
-      "tags": ["repository"]
+      "tags": [
+        "repository"
+      ]
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },

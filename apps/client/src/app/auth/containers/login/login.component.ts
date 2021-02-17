@@ -9,8 +9,8 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  validateForm: FormGroup;
-  private redirectUrl: string;
+  validateForm!: FormGroup;
+  private redirectUrl!: string;
 
   constructor(
     private router: Router,
@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       controls[key].markAsDirty();
       controls[key].updateValueAndValidity();
     });
+
     this.authService.doLoginUser(
       {
         id: '1',
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
         avatar: '',
         roles: ['user'],
       },
-      null,
+      null!,
     );
     this.authApi.login(value).subscribe((data: any) => {
       this.authService.doLoginUser(data.user, data.tokens);

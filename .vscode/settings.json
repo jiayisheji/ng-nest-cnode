@@ -52,7 +52,6 @@
   "gitlens.views.lineHistory.enabled": true,
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
     "typescript"
   ],
   // markdown
@@ -78,6 +77,18 @@
   // emmet
   "emmet.triggerExpansionOnTab": true,
   "emmet.showSuggestionsAsSnippets": true,
+  // stylelint
+  "stylelint.syntax": "scss",
+  "stylelint.validate": [
+    "sass",
+    "scss"
+  ],
+  // typescript
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // 禁用提示 对修饰器的实验支持是一项将在将来版本中更改的功能 错误提示
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  // commitizen
+  "commitizen.subjectLength": 150,
   // 以下配置大多是设置默认格式化程序
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -97,8 +108,6 @@
   "[markdown]": {
     "editor.defaultFormatter": "shd101wyy.markdown-preview-enhanced"
   },
-  // typescript
-  "typescript.tsdk": "node_modules\\typescript\\lib",
   "cSpell.words": [
     "Nestjs",
     "Typegoose",

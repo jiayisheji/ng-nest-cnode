@@ -53,7 +53,7 @@
     "help": "nx help",
     "release": "standard-version",
     "publish": "standard-version && git push --follow-tags origin master",
-    "postinstall": "node ./decorate-angular-cli.js"
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -102,6 +102,9 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.5",
+    "@angular-eslint/eslint-plugin": "0.8.0-beta.1",
+    "@angular-eslint/eslint-plugin-template": "0.8.0-beta.1",
+    "@angular-eslint/template-parser": "0.8.0-beta.1",
     "@angular/cli": "^11.0.5",
     "@angular/compiler-cli": "^11.0.5",
     "@angular/language-service": "^11.0.5",
@@ -111,6 +114,7 @@
     "@nestjs/testing": "^7.3.2",
     "@nrwl/cli": "11.0.12",
     "@nrwl/cypress": "11.0.12",
+    "@nrwl/eslint-plugin-nx": "11.0.12",
     "@nrwl/jest": "11.0.12",
     "@nrwl/nest": "^11.0.12",
     "@nrwl/node": "11.0.12",
@@ -127,10 +131,13 @@
     "@types/passport-github2": "^1.2.4",
     "@types/passport-jwt": "^3.0.3",
     "@types/passport-local": "^1.0.33",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
     "codelyzer": "^6.0.0",
     "cypress": "3.6.1",
     "dotenv": "6.2.0",
     "eslint": "6.8.0",
+    "eslint-config-prettier": "6.0.0",
     "eslint-plugin-cypress": "^2.10.3",
     "htmlhint": "^0.11.0",
     "husky": "^4.2.5",

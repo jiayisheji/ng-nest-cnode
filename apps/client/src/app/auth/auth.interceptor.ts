@@ -9,13 +9,17 @@ import { Tokens } from './models/tokens';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   private isRefreshing = false;
-  private refreshTokenSubject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  private refreshTokenSubject = new BehaviorSubject<string>('');
 
   constructor(private authService: AuthService, private authApi: AuthApi) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (this.authService.getJwtToken() && request.url.startsWith('/api')) {
-      request = this.addToken(request, this.authService.getJwtToken());
+    // 为api接口添加token
+    if (request.url.startsWith('/api')) {
+      const token = this.authService.getJwtToken();
+      if (token) {
+        request = this.addToken(request, token);
+      }
     }
     return next.handle(request).pipe(
       catchError((error) => {
@@ -37,19 +41,20 @@ export class AuthInterceptor implements HttpInterceptor {
   private handle401Error(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (!this.isRefreshing) {
       this.isRefreshing = true;
-      this.refreshTokenSubject.next(null);
+      this.refreshTokenSubject.next('');
 
       return this.authApi.refreshToken().pipe(
         switchMap((token: Tokens) => {
+          const accessToken = token.accessToken;
           this.isRefreshing = false;
-          this.refreshTokenSubject.next(token.accessToken);
+          this.refreshTokenSubject.next(accessToken);
           this.authService.doLoginUser(null, token);
-          return next.handle(this.addToken(request, token.accessToken));
+          return next.handle(this.addToken(request, accessToken));
         }),
       );
     } else {
       return this.refreshTokenSubject.pipe(
-        filter((token) => token != null),
+        filter((token) => token !== ''),
         take(1),
         switchMap((jwt) => {
           return next.handle(this.addToken(request, jwt));
