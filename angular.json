@@ -89,7 +89,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -127,7 +130,10 @@
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/client"
+          ]
         }
       }
     },
@@ -192,7 +198,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -218,7 +227,10 @@
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/server"
+          ]
         }
       }
     },
@@ -245,9 +257,11 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/repository/jest.config.js",
-            "tsConfig": "libs/repository/tsconfig.spec.json",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/repository"
+          ]
         }
       }
     }

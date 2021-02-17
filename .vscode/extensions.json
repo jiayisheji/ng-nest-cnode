@@ -19,6 +19,7 @@
     "coenraads.bracket-pair-colorizer-2",
     "quicktype.quicktype",
     "jasonnutter.search-node-modules",
-    "humao.rest-client"
+    "humao.rest-client",
+    "firsttris.vscode-jest-runner"
   ]
 }
