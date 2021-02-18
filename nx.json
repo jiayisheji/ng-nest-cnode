@@ -19,14 +19,14 @@
         "app-module"
       ]
     },
-    "server": {
-      "tags": [
-        "api-module"
-      ]
-    },
     "repository": {
       "tags": [
         "repository"
+      ]
+    },
+    "server": {
+      "tags": [
+        "api-module"
       ]
     }
   },

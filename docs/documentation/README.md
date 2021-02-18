@@ -64,10 +64,10 @@
 
 ## 第七章 authentication（身份验证）
 
-1. Passport
-2. Nest 与 AuthModule
-3. Angular 与 AuthModule
-4. jwt
+1. [Passport](chapter7/7.1-passport.md)
+2. [jwt](chapter7/7.2-jwt.md)
+3. Nest 与 AuthModule
+4. [Angular 与 AuthModule](chapter7/7.3-Angular与AuthModule.md)
 5. github
 
 ## 第八章 Routing

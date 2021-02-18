@@ -3,6 +3,10 @@
   "ignorePatterns": [
     "**/*"
   ],
+  "globals": {
+    "window": true,
+    "module": true
+  },
   "plugins": [
     "@nrwl/nx"
   ],

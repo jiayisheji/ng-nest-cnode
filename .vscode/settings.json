@@ -33,8 +33,7 @@
   },
   // File settings
   "files.associations": {
-    "*.template": "plaintext",
-    "*.md": "mdx"
+    "*.template": "plaintext"
   },
   "files.defaultLanguage": "",
   "files.trimTrailingWhitespace": true,
@@ -114,8 +113,10 @@
     "Virtuals",
     "cnode",
     "dasherize",
+    "jiayi",
     "mongodb",
     "nrwl",
+    "stylelint",
     "typeof"
   ]
 }
