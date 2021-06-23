@@ -1,21 +1,6 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Ip,
-  Post,
-  Query,
-  Req,
-  Res,
-  UnauthorizedException,
-  UseGuards,
-} from '@nestjs/common';
+import { Controller, Get, HttpStatus, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiBearerAuth, ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Request } from 'express';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserInfoEntity } from './dto/user-info.entiey';
 import { UserService } from './user.service';
 
@@ -29,7 +14,7 @@ export class UserController {
   @ApiResponse({ status: HttpStatus.UNAUTHORIZED, type: UnauthorizedException })
   @UseGuards(AuthGuard('jwt'))
   @ApiBearerAuth()
-  register() {
+  info() {
     return this.userService.info();
   }
 }

@@ -1,37 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "repository": {
-      "root": "libs/repository",
-      "sourceRoot": "libs/repository/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/repository/tsconfig.lib.json",
-              "libs/repository/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/repository/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/repository/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/repository"
-          ]
-        }
-      }
-    },
     "client": {
       "projectType": "application",
       "root": "apps/client",
@@ -54,28 +23,19 @@
                 "glob": "**/*",
                 "input": "./node_modules/material-design-icons/sprites/svg-sprite",
                 "output": "/assets/icons",
-                "ignore": [
-                  "**/*.html",
-                  "**/*.css"
-                ]
+                "ignore": ["**/*.html", "**/*.css"]
               },
               {
                 "glob": "**/*",
                 "input": "./node_modules/material-design-icons/iconfont",
                 "output": "/assets/iconfont",
-                "ignore": [
-                  "**/*.md"
-                ]
+                "ignore": ["**/*.md"]
               }
             ],
-            "styles": [
-              "apps/client/src/styles.scss"
-            ],
+            "styles": ["apps/client/src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "./node_modules/@angular/material"
-              ]
+              "includePaths": ["./node_modules/@angular/material"]
             }
           },
           "configurations": {
@@ -130,17 +90,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/client/src/**/*.ts",
-              "apps/client/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/client/src/**/*.ts", "apps/client/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/client"
-          ],
+          "outputs": ["coverage/apps/client"],
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
@@ -169,9 +124,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/client-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -184,16 +137,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": [
-              "apps/server/src/assets"
-            ]
+            "assets": ["apps/server/src/assets"]
           },
           "configurations": {
             "production": {
@@ -218,16 +167,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/server/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/server/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/server"
-          ],
+          "outputs": ["coverage/apps/server"],
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true

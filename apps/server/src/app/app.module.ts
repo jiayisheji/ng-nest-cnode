@@ -15,7 +15,7 @@ import { UserModule } from './user/user.module';
     ConfigModule.forRoot({
       isGlobal: true,
       expandVariables: true,
-      envFilePath: `${process.env.NODE_ENV || 'development'}.env`,
+      envFilePath: `.env`,
       load,
       validationSchema,
     }),

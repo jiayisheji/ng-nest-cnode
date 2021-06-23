@@ -26,9 +26,80 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
+                "sourceTag": "client-type:app",
+                "onlyDependOnLibsWithTags": ["client-type:feature", "client-type:ui"]
+              },
+              {
+                "sourceTag": "client-type:feature",
+                "onlyDependOnLibsWithTags": ["client-type:ui", "client-type:data", "client-type:types", "client-type:state"]
+              },
+              {
+                "sourceTag": "client-type:domain",
+                "onlyDependOnLibsWithTags": ["client-type:ui", "client-type:data", "client-type:types", "client-type:state"]
+              },
+              {
+                "sourceTag": "client-type:ui",
+                "onlyDependOnLibsWithTags": ["client-type:types", "client-type:ui"]
+              },
+              {
+                "sourceTag": "client-type:types",
+                "onlyDependOnLibsWithTags": ["client-type:types"]
+              },
+              {
+                "sourceTag": "client-type:state",
+                "onlyDependOnLibsWithTags": ["client-type:state", "client-type:types", "client-type:data"]
+              },
+              {
+                "sourceTag": "client-type:data",
+                "onlyDependOnLibsWithTags": ["client-type:types"]
+              },
+              {
+                "sourceTag": "client-type:e2e",
+                "onlyDependOnLibsWithTags": ["client-type:e2e-utils"]
+              },
+              {
+                "sourceTag": "server-type:application",
+                "onlyDependOnLibsWithTags": ["server-type:ui", "server-type:core"]
+              },
+              {
+                "sourceTag": "server-type:application-services",
+                "onlyDependOnLibsWithTags": ["server-type:domain", "server-type:domain-services", "server-type:port", "server-type:util"]
+              },
+              {
+                "sourceTag": "server-type:domain-services",
+                "onlyDependOnLibsWithTags": ["server-type:domain", "server-type:util"]
+              },
+              {
+                "sourceTag": "server-type:domain",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
+                "sourceTag": "server-type:infrastructure",
                 "onlyDependOnLibsWithTags": [
-                  "*"
+                  "server-type:domain",
+                  "server-type:domain-services",
+                  "server-type:application-services",
+                  "server-type:port",
+                  "server-type:util"
+                ]
+              },
+              {
+                "sourceTag": "server-type:shell",
+                "onlyDependOnLibsWithTags": [
+                  "server-type:domain",
+                  "server-type:domain-services",
+                  "server-type:application-services",
+                  "server-type:infrastructure",
+                  "server-type:port"
+                ]
+              },
+              {
+                "sourceTag": "server-type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "server-type:domain",
+                  "server-type:domain-services",
+                  "server-type:application-services",
+                  "server-type:shell"
                 ]
               }
             ]

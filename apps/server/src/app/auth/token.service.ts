@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import { UserRepository } from '@ng-nest-cnode/repository';
 import { randomBytes } from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import { JwtPayload } from './passport/jwt-payload';
@@ -11,7 +10,7 @@ export class TokenService {
   // @todo: should be put in redis cache
   private readonly usersExpired: number[] = [];
 
-  constructor(private userRepository: UserRepository, private jwtService: JwtService, private configService: ConfigService) {}
+  constructor(private jwtService: JwtService, private configService: ConfigService) {}
 
   async validatePayload(payload: JwtPayload): Promise<{ id: string }> {
     const tokenBlacklisted = await this.isBlackListed(payload.sub, payload.exp);
@@ -62,6 +61,7 @@ export class TokenService {
   }
 
   async createRefreshToken(userId: string, ipAddress: string) {
+    console.log(userId, ipAddress);
     const refreshToken = randomBytes(64).toString('hex');
     return refreshToken;
   }
@@ -86,5 +86,7 @@ export class TokenService {
    * 撤销用户 token
    * @param id 用户id
    */
-  private async revokeTokenForUser(id: string) {}
+  private async revokeTokenForUser(id: string) {
+    console.log(id);
+  }
 }

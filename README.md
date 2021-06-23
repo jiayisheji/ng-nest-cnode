@@ -1,6 +1,6 @@
 # ng-nest-cnode
 
-A simple application demonstrating [Angular](https://github.com/angular/angular) (SPA, SSR) the basic usage of permissions with [NestJS](https://github.com/nestjs/nest) (JWT, Passport, Github, User, Group, Permission) based on [CNode](https://cnodejs.org) template
+A simple application demonstrating [Angular](https://github.com/angular/angular) (SPA, SSR) the basic usage of permissions with [NestJS](https://github.com/nestjs/nest) (JWT, Passport, Github, User, Group, Permission) based on [CNode](https://cnodejs.org) template.
 
 ## Related Technology
 
@@ -20,8 +20,7 @@ A simple application demonstrating [Angular](https://github.com/angular/angular)
 
 ## Features
 
-- Use the Mongoose connect MongoDB
-- Use the TypeORM connect MongoDB
+- Use the Mongoose(Typegoose) connect MongoDB
 - Use the Ioredis connect Redis
 - Use JWT for authentication
 - Support github authentication login
@@ -45,8 +44,15 @@ These instructions should be sufficient for one to get the project going on thei
 ### Installing core dependencies
 
 - make sure you have [node.js](https://nodejs.org/en/download/) installed version 12.13+
+
+#### Installing DB dependencies
+
 - make sure you have [MongoDB](https://www.mongodb.com/) installed version 3.4+
 - make sure you have [Redis](https://redis.io/download) installed version 3.2+
+
+#### Docker Installing DB dependencies
+
+- make sure you have [Docker](https://www.docker.com/products/docker-desktop)
 
 ### Cloning the github repository
 
@@ -64,6 +70,14 @@ To install the dependencies after you've cloned the project, go to its root fold
 cd ng-nest-cnode && npm install
 ```
 
+### Setting environment variables
+
+```bash
+cp .env.example  .env
+```
+
+> Modify the corresponding values as required
+
 ### Starting the MongoDB and Redis
 
 Once you start the database application, you are ready to run the server
@@ -71,6 +85,12 @@ Once you start the database application, you are ready to run the server
 Boot according to your system
 
 Notice that the server uses MongoDB and Redis so we need to have a MongoDB and Redis instance running so the server can connect to it。
+
+If you use Docker:
+
+```bash
+docker-compose up -d
+```
 
 ### Alternative commands
 
@@ -102,8 +122,8 @@ Keeping in mind that you need to have the Angular app built and a MongoDB and Re
 - [NestJS Docs](https://docs.nestjs.com)
 - [Typescript Docs](http://www.typescriptlang.org/)
 - [Rxjs Docs](https://rxjs.dev/api)
-- [Typeorm Docs](https://typeorm.io/#/)
 - [Mongoose Docs](https://mongoosejs.com/)
+- [Typegoose Docs](https://typegoose.github.io/typegoose/)
 - [Ioredis Docs](https://github.com/luin/ioredis/blob/master/API.md)
 - [Graphql Docs](https://graphql.org/)
 - [Passport Docs](http://www.passportjs.org/)

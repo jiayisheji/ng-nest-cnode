@@ -7,9 +7,23 @@
   "semi": true,
   "overrides": [
     {
+      "files": "*.html",
+      "options": {
+        "printWidth": 140
+      }
+    },
+    {
       "files": "*.scss",
       "options": {
         "singleQuote": false
+      }
+    },
+    {
+      "files": [
+        "*.yml"
+      ],
+      "options": {
+        "tabWidth": 4
       }
     }
   ]
