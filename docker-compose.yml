@@ -1,0 +1,47 @@
+#  Run `docker-compose build` to build the images
+#  Run `docker-compose up` to run the containers
+#  Run `docker-compose up -d` to run the containers background to start
+#  Run `docker-compose stop` to run the container that will stop running
+#  Run `docker-compose down` to run the container that will stop running and delete the container
+
+version: '3.5'
+services:
+    # MongoDB Database service
+    mongodb:
+        # pull image from docker hub
+        image: mongo:latest
+        # container name
+        container_name: mongodb
+        hostname: mongodb
+        restart: always
+        env_file:
+            - .env
+        # database credentials, this is take value from env file
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: root
+            MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+            MONGO_USERNAME: ${MONGO_USERNAME}
+            MONGO_PASSWORD: ${MONGO_PASSWORD}
+        # database authorization
+        command: [--auth]
+        volumes:
+            - ./.docker/mongodb_data:/data/db/
+            - ./scripts/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+        # database port
+        ports:
+            - '${MONGO_PORT}:27017'
+    # Redis Database service
+    redis:
+        # pull image from docker hub
+        image: redis:latest
+        # container name
+        container_name: redis-service
+        # save (persist) data and also to share data between containers
+        volumes:
+            - ./.docker/redis_data:/data
+        # always restart the container if it stops.
+        restart: always
+        # database port
+        ports:
+            - '${REDIS_PORT}:6379'
